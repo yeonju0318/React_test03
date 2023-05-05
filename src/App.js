@@ -19,18 +19,21 @@ function App() {
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
 
+  console.log(todos);
   const onAddTodo = () => {
     const newTodo = {
       id: id,
       title,
       body,
     };
-    dispatch(__addToDo({ title, body }));
+
+    dispatch(__addToDo(newTodo));
     resetInputs();
   };
 
   const onDeleteTodo = (id) => {
     dispatch(__deleteTodo(id));
+    console.log(id);
   };
 
   const resetInputs = () => {
